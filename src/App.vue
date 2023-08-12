@@ -1,13 +1,16 @@
 <template lang="">
-  <UserList> </UserList>
   <div class="app"></div>
+  <CreateRole> </CreateRole>
+  <RoleList> </RoleList>
 </template>
 <script>
-import UserList from "@/components/UserList";
+import RoleList from "@/components/RoleList";
+import CreateRole from "@/components/CreateRole";
 
 export default {
   components: {
-    UserList,
+    RoleList,
+    CreateRole,
   },
 };
 </script>
