@@ -1,12 +1,15 @@
 <template>
   <div class="app-layout">
-    <header>
-      <h1>SHMONEY SOUND</h1>
-      <nav><my-button @click="handleButtonClick">Нажми меня</my-button></nav>
+    <header class="header-container">
+      <nav><router-view></router-view></nav>
+      <div class="header-title">
+        <h1 class="line">SHMONEY</h1>
+        <h1 class="line">SOUND</h1>
+      </div>
     </header>
     <main></main>
     <footer>
-      <p>&copy; 2023 Студия звукозаписи. Все права защищены.</p>
+      <p>&copy; 2023 Shmoney Sound. Все права защищены.</p>
     </footer>
   </div>
 </template>
@@ -18,13 +21,16 @@ export default {
   components: {
     MyButton,
   },
-
   methods: {
-    handleButtonClick() {
-      alert("Кнопка нажата!");
+    async handleClick() {
+      try {
+        const response = await this.api.get("/roles");
+        console.log(response.data);
+      } catch (e) {
+        console.error(e);
+      }
     },
   },
-
   name: "AppLayout",
 };
 </script>
@@ -32,6 +38,25 @@ export default {
 <style>
 #app {
   height: 100%;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+}
+
+.header-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.line {
+  margin: 0;
 }
 
 .app-layout {
@@ -46,11 +71,12 @@ body {
   margin: 0;
 }
 
-header,
 footer {
   background-color: #333;
   color: #fff;
   text-align: center;
+  padding: 10px;
+  margin-top: auto;
 }
 
 main {

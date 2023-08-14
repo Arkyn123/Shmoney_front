@@ -1,5 +1,5 @@
 <template>
-  <button class="my-button" @click="handleClick">
+  <button class="my-button">
     <slot></slot>
   </button>
 </template>
@@ -7,17 +7,12 @@
 <script>
 export default {
   name: "MyButton",
-  methods: {
-    handleClick() {
-      this.$emit("click");
-    },
-  },
 };
 </script>
 
 <style scoped>
 .my-button {
-  margin-bottom: 20px;
+  margin-right: 30px;
   padding: 10px 20px;
   background-color: #666;
   color: #ffffff;
