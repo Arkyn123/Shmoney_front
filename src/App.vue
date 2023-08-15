@@ -1,6 +1,5 @@
 <template>
   <AppLayout> </AppLayout>
-  <div class="app">123</div>
 </template>
 
 <script>

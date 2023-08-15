@@ -1,62 +1,28 @@
 <template>
   <div class="app-layout">
-    <header class="header-container">
-      <nav><router-view></router-view></nav>
-      <div class="header-title">
-        <h1 class="line">SHMONEY</h1>
-        <h1 class="line">SOUND</h1>
-      </div>
-    </header>
-    <main></main>
-    <footer>
-      <p>&copy; 2023 Shmoney Sound. Все права защищены.</p>
-    </footer>
+    <layout-header></layout-header>
+    <layout-main></layout-main>
+    <layout-footer></layout-footer>
   </div>
 </template>
 
 <script>
-import MyButton from "@/UI/Button";
+import LayoutFooter from "@/components/LayoutFooter";
+import LayoutHeader from "@/components/LayoutHeader";
+import LayoutMain from "@/components/LayoutMain";
 
 export default {
   components: {
-    MyButton,
+    LayoutFooter,
+    LayoutHeader,
+    LayoutMain,
   },
-  methods: {
-    async handleClick() {
-      try {
-        const response = await this.api.get("/roles");
-        console.log(response.data);
-      } catch (e) {
-        console.error(e);
-      }
-    },
-  },
-  name: "AppLayout",
 };
 </script>
 
 <style>
 #app {
   height: 100%;
-}
-
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-}
-
-.header-title {
-  display: flex;
-  flex-direction: column;
-}
-
-.line {
-  margin: 0;
 }
 
 .app-layout {
@@ -69,17 +35,5 @@ html,
 body {
   height: 100%;
   margin: 0;
-}
-
-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 10px;
-  margin-top: auto;
-}
-
-main {
-  flex-grow: 1;
 }
 </style>

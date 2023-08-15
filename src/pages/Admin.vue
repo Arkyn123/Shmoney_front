@@ -1,4 +1,4 @@
-<template>Services</template>
+<template>Admin</template>
 
 <script>
 export default {

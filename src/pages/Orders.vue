@@ -1,4 +1,4 @@
-<template>Services</template>
+<template>Orders</template>
 
 <script>
 export default {

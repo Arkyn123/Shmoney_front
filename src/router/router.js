@@ -1,5 +1,9 @@
 import Main from "@/pages/Main";
 import Services from "@/pages/Services";
+import Orders from "@/pages/Orders";
+import Admin from "@/pages/Admin";
+import Employee from "@/pages/Employee";
+
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
@@ -10,6 +14,18 @@ const routes = [
   {
     path: "/services",
     component: Services,
+  },
+  {
+    path: "/orders",
+    component: Orders,
+  },
+  {
+    path: "/admin",
+    component: Admin,
+  },
+  {
+    path: "/employee",
+    component: Employee,
   },
 ];
 
